@@ -51,7 +51,7 @@ _start:
 	li		t0, 0b11 << 11
 	csrw	mstatus, t0
 	# Machine's exception program counter (MEPC) is set to `kinit`.
-	la		t1, kmain_0
+	la		t1, _057_home_057_rafael_057_Documents_057_a_055_os_057_src_057_pc_057_kernel_056_dats__dynload
 	csrw	mepc, t1
 	# Machine's trap vector base address is set to `asm_trap_vector`.
 	la		t2, asm_trap_vector
