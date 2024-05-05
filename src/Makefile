@@ -14,3 +14,4 @@ all:
 clean:	
 	$(MAKE) clean -C pcboot
 	$(MAKE) clean -C pc
+	rm kernel.elf
