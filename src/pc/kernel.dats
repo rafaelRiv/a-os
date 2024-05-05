@@ -1,24 +1,20 @@
-%{
-  ATSdynloadflag_minit(_057_home_057_rafael_057_Documents_057_a_055_os_057_src_057_pc_057_kernel_056_dats__dynloadflag) ;
-%}
+#include "share/atspre_staload.hats"
 
-%{
-  void hello() {
-    char *uart = 0x10000000;
-    *uart='H';
-    *uart='E';
-    *uart='L';
-    *uart='L';
-    *uart='O';
-  }
-%}
+staload "prelude/SATS/unsafe.sats"
+dynload "kernel.dats"
 
-extern fun hello (): void = "ext#hello"
+val uart: ptr = int2ptr(0x10000000)
 
 fun kmain (): void = 
-  begin
-       hello();
+  let
+    val () = ptr0_set(uart, 'H')
+    val () = ptr0_set(uart, 'E')
+    val () = ptr0_set(uart, 'L')
+    val () = ptr0_set(uart, 'L')
+    val () = ptr0_set(uart, 'O')
+  in
   end
 
 val () = kmain()
+
 
