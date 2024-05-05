@@ -1,5 +1,3 @@
-#include "share/atspre_staload.hats"
-
 staload "uart.sats"
 dynload "uart.dats"
 dynload "kernel.dats"
